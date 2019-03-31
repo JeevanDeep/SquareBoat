@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.squareboat.App
+import com.example.squareboat.R
 import com.example.squareboat.model.icon.IconResponse
 import com.example.squareboat.model.icon.IconsItem
 import com.example.squareboat.network.DataWrapper
@@ -53,7 +54,7 @@ class IconSearchViewModel @Inject constructor(private var repo: IconRepo) : View
 
 
     fun downloadImage(url: String) {
-
+        toastObserver.value = App.instance.getString(R.string.downloading_image)
         Picasso.get().load(url).into(object : Target {
             override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
             }

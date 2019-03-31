@@ -19,6 +19,7 @@ import com.example.squareboat.di.ViewModelFactory
 import com.example.squareboat.model.icon.IconsItem
 import com.example.squareboat.ui.IconsAdapter
 import com.example.squareboat.ui.search.IconSearchFragment
+import com.example.squareboat.utils.setGone
 import kotlinx.android.synthetic.main.fragment_dash_board.*
 import javax.inject.Inject
 
@@ -74,6 +75,7 @@ class DashBoardFragment : Fragment(), IconsAdapter.IconListener {
         viewModel.getIconObserver().observe(this, Observer { data ->
             data?.response?.let { list ->
 
+                progress.setGone()
                 iconAdapter.allowProgress(canRequestMore)
                 iconsList.addAll(list)
                 iconAdapter.notifyDataSetChanged()

@@ -61,6 +61,7 @@ class IconSearchFragment : Fragment(), IconsAdapter.IconListener {
         viewModel.getIconObserver().observe(this, Observer { data ->
             data?.response?.let { list ->
 
+                progress.setGone()
                 iconAdapter.allowProgress(canRequestMore)
                 iconsList.addAll(list)
                 iconAdapter.notifyDataSetChanged()
