@@ -46,7 +46,7 @@ class DashBoardViewModel @Inject constructor(private var repo: IconRepo) : ViewM
             }
 
             override fun onError(message: String) {
-                iconObserver.value = DataWrapper(null, message)
+                toastObserver.value = message
             }
         })
     }
@@ -66,7 +66,7 @@ class DashBoardViewModel @Inject constructor(private var repo: IconRepo) : ViewM
             }
 
             override fun onError(message: String) {
-                iconObserver.value = DataWrapper(null, message)
+                toastObserver.value = message
             }
         }, offset)
     }

@@ -18,7 +18,7 @@ class IconRepo @Inject constructor(private var apiClient: ApiInterface) {
                 .subscribe({
                     callBack.onSuccess(it)
                 }, {
-                    callBack.onError(it.message ?: "Something went wrong!")
+                    callBack.onError(ErrorHandler.handleError(it))
                 })
         )
     }
@@ -31,7 +31,7 @@ class IconRepo @Inject constructor(private var apiClient: ApiInterface) {
                 .subscribe({
                     callBack.onSuccess(it)
                 }, {
-                    callBack.onError(it.message ?: "Something went wrong!")
+                    callBack.onError(ErrorHandler.handleError(it))
                 })
         )
     }
@@ -44,7 +44,7 @@ class IconRepo @Inject constructor(private var apiClient: ApiInterface) {
                 .subscribe({
                     callBack.onSuccess(it)
                 }, {
-                    callBack.onError(it.message ?: "Something went wrong!")
+                    callBack.onError(ErrorHandler.handleError(it))
                 })
         )
     }

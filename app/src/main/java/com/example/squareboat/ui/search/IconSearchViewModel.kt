@@ -45,6 +45,8 @@ class IconSearchViewModel @Inject constructor(private var repo: IconRepo) : View
             }
 
             override fun onError(message: String) {
+                toastObserver.value = message
+
             }
         }, query, offset)
     }
