@@ -88,6 +88,7 @@ class DashBoardFragment : Fragment(), IconsAdapter.IconListener {
         })
 
         viewModel.toastOberver().observe(this, Observer {
+            progress.setGone()
             showToast(it)
         })
     }

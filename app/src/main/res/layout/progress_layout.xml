@@ -19,7 +19,8 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:id="@+id/loadMore"
-            android:text="Load More"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/load_more"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 

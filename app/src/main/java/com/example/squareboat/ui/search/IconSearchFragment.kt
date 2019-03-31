@@ -73,6 +73,7 @@ class IconSearchFragment : Fragment(), IconsAdapter.IconListener {
             canRequestMore = it
         })
         viewModel.toastOberver().observe(this, Observer {
+            progress.setGone()
             showToast(it)
         })
         viewModel.noItemsFoundObserver().observe(this, Observer { showNoItemsView ->
