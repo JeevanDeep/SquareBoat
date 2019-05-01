@@ -8,20 +8,20 @@ import retrofit2.http.Query
 
 interface ApiInterface {
 
-    @GET(ApiConstants.GET_ANIMAL_ICONS)
+    @GET(ApiConstants.GET_SUMMER_ICONS)
     fun getIcons(
         @Query("client_id") id: String = ApiConstants.CLIENT_ID,
         @Query("client_secret") secret: String = ApiConstants.CLIENT_SECRET
     ): Single<IconResponse>
 
-    @GET(ApiConstants.GET_ANIMAL_ICONS)
+    @GET(ApiConstants.GET_SUMMER_ICONS)
     fun getMoreIcons(
         @Query("client_id") id: String = ApiConstants.CLIENT_ID,
         @Query("client_secret") secret: String = ApiConstants.CLIENT_SECRET,
         @Query("after") offset: Int
     ): Single<IconResponse>
 
-    @GET(ApiConstants.SEARCH_ICON)
+    @GET(ApiConstants.SEARCH_ICONS)
     fun searchIcons(
         @Query("client_id") id: String = ApiConstants.CLIENT_ID,
         @Query("client_secret") secret: String = ApiConstants.CLIENT_SECRET,
